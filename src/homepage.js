@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link,Outlet } from "react-router-dom";
 
 export default function Homepage (){
     return(
@@ -7,7 +7,7 @@ export default function Homepage (){
         <button><Link to="/">Student Detail</Link></button>
         <button><Link to="/Addstudent">Add Student</Link></button>
         <button>Delete Student</button>
-
+         <Outlet/>
         </>
        
     )
