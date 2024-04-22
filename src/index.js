@@ -1,34 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import './index.css';
 import App from './App';
+
+
 import reportWebVitals from './reportWebVitals';
-import Form from './pages/form';
-import Addstudent from './pages/addStudent';
-import Homepage from './homepage';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 
 
-export default function Route_pr() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={< Homepage/>}>
-         
-          <Route path="/Form" element={<Form />} />
-          <Route path="/Addstudent" element={<Addstudent />} />
-          
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
-    <Route_pr />
+    <Provider store={store}>
+    <App/>
+
+    </Provider>
+     
   </React.StrictMode>
 );
 
